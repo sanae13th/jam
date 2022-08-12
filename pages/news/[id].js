@@ -7,7 +7,7 @@ export default function NewsId({ news }) {
 			<p>{news.publishedAt}</p>
 			<div
 				dangerouslySetInnerHTML={{
-					__html: `${news.text}`,
+					__html: `${news.author}`,
 				}}
 			/>
 		</main>

@@ -1,14 +1,14 @@
 import Link from "next/link";
 import { client } from "../../src/lib/client";
 
-export default function Home({ blog }) {
+export default function Home({ books }) {
 	return (
 		<div>
 			<ul>
-				{blog.map((blog) => (
-					<li key={blog.id}>
-						<Link href={`/blog/${blog.id}`}>
-							<a>{blog.title}</a>
+				{books.map((book) => (
+					<li key={book.id}>
+						<Link href={`/book/${book.id}`}>
+							<a>{book.title}</a>
 						</Link>
 					</li>
 				))}
@@ -19,11 +19,11 @@ export default function Home({ blog }) {
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async () => {
-	const data = await client.get({ endpoint: "blogs" });
+	const data = await client.get({ endpoint: "books" });
 
 	return {
 		props: {
-			blog: data.contents,
+			books: data.contents,
 		},
 	};
 };

@@ -4,8 +4,8 @@ import Link from "next/link";
 export default function Home() {
 	return (
 		<div>
-			<Link href={`/blog`}>
-				<a>ブログ一覧へ</a>
+			<Link href={`/book`}>
+				<a>本一覧へ</a>
 			</Link>
 			<Link href={`/news`}>
 				<a>ニュース一覧へ</a>
