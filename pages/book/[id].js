@@ -1,17 +1,22 @@
+import { Container } from "../../src/components/Container";
+import { Spacer } from "../../src/components/Spacer";
 import { client } from "../../src/lib/client";
 
 export default function BlogId({ book }) {
 	return (
-		<main>
-			<h1>{book.title}</h1>
-			<p>{book.author}</p>
-			<p>{book.publishedAt}</p>
+		<Container>
+			<h2>題名: {book.title}</h2>
+			<Spacer size={24} />
+			<p>執筆者: {book.author}</p>
+			<Spacer size={8} />
+			<p>発売日: {book.publishedAt}</p>
+			<Spacer size={32} />
 			<div
 				dangerouslySetInnerHTML={{
 					__html: `${book.text}`,
 				}}
 			/>
-		</main>
+		</Container>
 	);
 }
 

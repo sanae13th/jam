@@ -1,16 +1,23 @@
 import Link from "next/link";
+import { Container } from "../src/components/Container";
+import { Spacer } from "../src/components/Spacer";
 // import { client } from "../src/lib/client";
 
 export default function Home() {
 	return (
-		<div>
-			<Link href={`/book`}>
-				<a>本一覧へ</a>
-			</Link>
-			<Link href={`/news`}>
-				<a>ニュース一覧へ</a>
-			</Link>
-		</div>
+		<main>
+			<Container>
+				<h2>本の紹介サイト</h2>
+				<Spacer size={24} />
+				<Link href={`/book`}>
+					<a>本一覧へ</a>
+				</Link>
+				<Spacer size={16} />
+				<Link href={`/news`}>
+					<a>ニュース一覧へ</a>
+				</Link>
+			</Container>
+		</main>
 	);
 }
 

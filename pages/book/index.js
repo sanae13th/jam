@@ -1,10 +1,15 @@
 import Link from "next/link";
+import { Container } from "../../src/components/Container";
+import { Spacer } from "../../src/components/Spacer";
 import { client } from "../../src/lib/client";
+import styles from "../../styles/list.module.scss";
 
 export default function Home({ books }) {
 	return (
-		<div>
-			<ul>
+		<Container>
+			<h2>本一覧</h2>
+			<Spacer size={24} />
+			<ul className={styles.wrapper}>
 				{books.map((book) => (
 					<li key={book.id}>
 						<Link href={`/book/${book.id}`}>
@@ -13,7 +18,7 @@ export default function Home({ books }) {
 					</li>
 				))}
 			</ul>
-		</div>
+		</Container>
 	);
 }
 

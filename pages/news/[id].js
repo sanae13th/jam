@@ -1,16 +1,20 @@
+import { Container } from "../../src/components/Container";
+import { Spacer } from "../../src/components/Spacer";
 import { client } from "../../src/lib/client";
 
 export default function NewsId({ news }) {
 	return (
-		<main>
-			<h1>{news.title}</h1>
+		<Container>
+			<h2>{news.title}</h2>
+			<Spacer size={8} />
 			<p>{news.publishedAt}</p>
+			<Spacer size={8} />
 			<div
 				dangerouslySetInnerHTML={{
 					__html: `${news.author}`,
 				}}
 			/>
-		</main>
+		</Container>
 	);
 }
 
