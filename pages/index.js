@@ -16,6 +16,10 @@ export default function Home() {
 				<Link href={`/news`}>
 					<a>ニュース一覧へ</a>
 				</Link>
+				<Spacer size={40} />
+				{/* TODO: 検索設置A 通常全文検索 */}
+				{/* TODO: 検索設置B 複数API検索 */}
+				{/* TODO: 検索設置C fusejs */}
 			</Container>
 		</main>
 	);
