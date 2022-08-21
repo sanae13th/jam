@@ -4,17 +4,16 @@ import { Spacer } from "../../src/components/Spacer";
 import { client } from "../../src/lib/client";
 import styles from "../../styles/list.module.scss";
 
-export default function Home({ news }) {
-	console.log(news);
+export default function Home({ books }) {
 	return (
 		<Container>
-			<h2>ニュース一覧</h2>
+			<h2>本一覧</h2>
 			<Spacer size={24} />
 			<ul className={styles.wrapper}>
-				{news.map((news) => (
-					<li key={news.id}>
-						<Link href={`/news/${news.id}`}>
-							<a>[発売開始] {news.title}</a>
+				{books.map((book) => (
+					<li key={book.id}>
+						<Link href={`/book/${book.id}`}>
+							<a>{book.title}</a>
 						</Link>
 					</li>
 				))}
@@ -25,11 +24,12 @@ export default function Home({ news }) {
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async () => {
-	const data = await client.get({ endpoint: "news" });
+	const data = await client.get({ endpoint: "books" });
+	console.log(data, "book");
 
 	return {
 		props: {
-			news: data.contents,
+			books: data.contents,
 		},
 	};
 };
