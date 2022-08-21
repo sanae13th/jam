@@ -20,7 +20,7 @@ export default function NewsId({ news }) {
 
 // 静的生成のためのパスを指定します
 export const getStaticPaths = async () => {
-	const data = await client.get({ endpoint: "news" });
+	const data = await client.get({ endpoint: "news", queries: { limit: 100 } });
 
 	const paths = data.contents.map((content) => `/news/${content.id}`);
 	return { paths, fallback: false };

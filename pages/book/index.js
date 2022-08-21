@@ -24,7 +24,10 @@ export default function Home({ books }) {
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async () => {
-	const data = await client.get({ endpoint: "books" });
+	const data = await client.get({
+		endpoint: "books",
+		queries: { limit: 100 },
+	});
 
 	return {
 		props: {
