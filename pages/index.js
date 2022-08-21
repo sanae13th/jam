@@ -36,7 +36,7 @@ export default function Home() {
 					<section>
 						<h4>複合</h4>
 						<Spacer size={16} />
-						<Form category="" type="contains" />
+						<Form category="" type="マルチ" />
 					</section>
 				</section>
 				{/* TODO: 検索設置C fusejs */}

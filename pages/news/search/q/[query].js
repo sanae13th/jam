@@ -8,23 +8,21 @@ export default function Home({ news, searchQuery }) {
 	return (
 		<Container>
 			<h2>ニュース検索結果</h2>
+			<Spacer size={16} />
 			<div>
 				検索ワード: <span className={styles.word}>{searchQuery}</span>
 			</div>
-			<Spacer size={24} />
-			{news.length === 0 ? (
-				<div>検索結果は0件です</div>
-			) : (
-				<ul className={styles.wrapper}>
-					{news.map((news) => (
-						<li key={news.id}>
-							<Link href={`/news/${news.id}`}>
-								<a>[発売開始] {news.title}</a>
-							</Link>
-						</li>
-					))}
-				</ul>
-			)}
+			<div>検索結果は{books.length}件です</div>
+			<Spacer size={16} />
+			<ul className={styles.wrapper}>
+				{news.map((news) => (
+					<li key={news.id}>
+						<Link href={`/news/${news.id}`}>
+							<a>[発売開始] {news.title}</a>
+						</Link>
+					</li>
+				))}
+			</ul>
 			<Link href="/">
 				<a>TOPへ</a>
 			</Link>

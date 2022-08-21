@@ -8,23 +8,21 @@ export default function Home({ books, searchQuery }) {
 	return (
 		<Container>
 			<h2>本の検索結果</h2>
+			<Spacer size={16} />
 			<div>
 				検索ワード: <span className={styles.word}>{searchQuery}</span>
 			</div>
-			<Spacer size={24} />
-			{books.length === 0 ? (
-				<div>検索結果は0件です</div>
-			) : (
-				<ul className={styles.wrapper}>
-					{books.map((book) => (
-						<li key={book.id}>
-							<Link href={`/book/${book.id}`}>
-								<a>{book.title}</a>
-							</Link>
-						</li>
-					))}
-				</ul>
-			)}
+			<div>検索結果は{books.length}件です</div>
+			<Spacer size={16} />
+			<ul className={styles.wrapper}>
+				{books.map((book) => (
+					<li key={book.id}>
+						<Link href={`/book/${book.id}`}>
+							<a>{book.title}</a>
+						</Link>
+					</li>
+				))}
+			</ul>
 			<Link href="/">
 				<a>TOPへ</a>
 			</Link>
@@ -43,7 +41,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({ params }) => {
 	const data = await client.get({
 		endpoint: "books",
-		queries: { filters: `text[contains]${params.query}`, limit: 100 },
+		queries: { filters: `title[contains]${params.query}`, limit: 100 },
 	});
 
 	return {

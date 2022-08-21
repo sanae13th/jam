@@ -10,7 +10,11 @@ export const Form = ({ category, type }) => {
 	};
 	const onClick = (event) => {
 		event.preventDefault();
-		router.push(`/${category}/search/${type}/${value}`);
+		if (category.length > 0) {
+			router.push(`/${category}/search/${type}/${value}`);
+		} else {
+			router.push(`/search-micro/${value}`);
+		}
 	};
 	return (
 		<form className={styles.form}>
