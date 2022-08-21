@@ -5,7 +5,6 @@ import { client } from "../../../../src/lib/client";
 import styles from "../../../../styles/list.module.scss";
 
 export default function Home({ news }) {
-	console.log("結果", news);
 	return (
 		<Container>
 			<h2>ニュース検索結果</h2>
@@ -36,7 +35,6 @@ export const getStaticPaths = async () => {
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async ({ params }) => {
-	console.log("param", params.query);
 	const data = await client.get({
 		endpoint: "news",
 		queries: { filters: `title[contains]${params.query}`, limit: 100 },

@@ -5,7 +5,6 @@ import { client } from "../../src/lib/client";
 import styles from "../../styles/list.module.scss";
 
 export default function Home({ news }) {
-	console.log(news);
 	return (
 		<Container>
 			<h2>ニュース一覧</h2>
