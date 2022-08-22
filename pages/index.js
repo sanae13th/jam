@@ -52,19 +52,6 @@ export default function Home() {
 							<Form category="book" type="q" />
 							<Form category="book" type="contains" />
 						</section>
-						<Spacer size={24} />
-						<section>
-							<h4>ニュースの検索</h4>
-							<Spacer size={16} />
-							<Form category="news" type="q" />
-							<Form category="news" type="contains" />
-						</section>
-						<Spacer size={24} />
-						<section>
-							<h4>複合</h4>
-							<Spacer size={16} />
-							<Form category="" type="マルチ" />
-						</section>
 					</section>
 				</div>
 			</Container>
