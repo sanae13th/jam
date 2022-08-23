@@ -17,7 +17,7 @@ export default function Home({ news, books, searchQuery }) {
 			<ul className={styles.wrapper}>
 				{books.map((books) => (
 					<li key={books.id}>
-						<Link href={`/books/${books.id}`}>
+						<Link href={`/book/${books.id}`}>
 							<a>[title] {books.title}</a>
 						</Link>
 					</li>
