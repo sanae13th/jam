@@ -20,7 +20,7 @@ export default function Home() {
 				</Link>
 				<Spacer size={16} />
 				<Link href={`/advanced-search`}>
-					<a>高度な検索へ</a>
+					<a>検索 + アルファへ</a>
 				</Link>
 				<Spacer size={40} />
 				<div className={styles.wrapper}>
