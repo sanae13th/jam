@@ -23,6 +23,12 @@ export default function Home() {
 					<section className={styles.microCMS}>
 						<h3>microCMS検索</h3>
 						<section>
+							<h4>複合</h4>
+							<Spacer size={16} />
+							<Form category="" type="マルチ" />
+						</section>
+						<Spacer size={24} />
+						<section>
 							<h4>本の検索</h4>
 							<Spacer size={16} />
 							<Form category="book" type="q" />
@@ -34,12 +40,6 @@ export default function Home() {
 							<Spacer size={16} />
 							<Form category="news" type="q" />
 							<Form category="news" type="contains" />
-						</section>
-						<Spacer size={24} />
-						<section>
-							<h4>複合</h4>
-							<Spacer size={16} />
-							<Form category="" type="マルチ" />
 						</section>
 					</section>
 					<Spacer size={8} />
