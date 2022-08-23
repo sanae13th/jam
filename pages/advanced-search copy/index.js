@@ -5,10 +5,12 @@ import { Spacer } from "../../src/components/Spacer";
 import styles from "../../styles/advanced.module.scss";
 import Fuse from "fuse.js";
 import { useState } from "react";
+import { highlight } from "../../scripts/useFuse";
 
 export default function Home() {
 	const [isNews, setIsNews] = useState(false);
 	const [isBook, setIsBook] = useState(false);
+	const [isHighlight, setIsHighlight] = useState(false);
 	const [keyword, setKeyword] = useState("");
 	const [match, setMatch] = useState(1);
 	const [result, setResult] = useState(0);
@@ -28,6 +30,8 @@ export default function Home() {
 			keys: [`${isBook ? bookTitle : null}`, `${!isNews ? newsTitle : null}`],
 		};
 		const fuse = new Fuse(jsonData, optionsIn);
+		const res = highlight(fuse.search(keyword));
+		console.log({ res });
 		setResult(() => fuse.search(keyword));
 	};
 	const onChangeBook = () => {
@@ -39,6 +43,9 @@ export default function Home() {
 		};
 		const fuse = new Fuse(jsonData, optionsIn);
 		setResult(() => fuse.search(keyword));
+	};
+	const onChangeHighlight = () => {
+		setIsHighlight((prev) => !prev);
 	};
 	const onChangeKeyword = (e) => {
 		setKeyword(() => e.target.value);
@@ -66,6 +73,7 @@ export default function Home() {
 		const newsArr = data.matches.filter(
 			(content) => content.key === "news.title"
 		);
+		console.log({ newsArr });
 		const news = newsArr.map((content) => data.item.news[content.refIndex]);
 		const books = bookArr.map((content) => data.item.book[content.refIndex]);
 		return { news, books };
@@ -74,7 +82,7 @@ export default function Home() {
 
 	return (
 		<Container>
-			<h2>検索 + アルファ</h2>
+			<h2>高度な検索</h2>
 			<div>
 				検索ワード: <span className={styles.word}>{keyword}</span>
 			</div>
@@ -93,9 +101,14 @@ export default function Home() {
 					<div>
 						<label htmlFor="news">news</label>
 						<input type="checkbox" id="news" onChange={onChangeNews} />
-						<Spacer size={8} />
 						<label htmlFor="book">book</label>
 						<input type="checkbox" id="book" onChange={onChangeBook} />
+						<label htmlFor="highlight">ハイライト</label>
+						<input
+							type="checkbox"
+							id="highlight"
+							onChange={onChangeHighlight}
+						/>
 					</div>
 					<label htmlFor="match">一致度(高いほど完全一致に近づく)</label>
 					<input
