@@ -22,11 +22,9 @@ export default function Home() {
 				<div className={styles.wrapper}>
 					<section className={styles.microCMS}>
 						<h3>microCMS検索</h3>
-						<section>
-							<h4>複合</h4>
-							<Spacer size={16} />
+						<div>
 							<Form category="" type="マルチ" />
-						</section>
+						</div>
 						<Spacer size={24} />
 						<section>
 							<h4>本の検索</h4>
