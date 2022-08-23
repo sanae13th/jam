@@ -18,6 +18,10 @@ export default function Home() {
 				<Link href={`/news`}>
 					<a>ニュース一覧へ</a>
 				</Link>
+				<Spacer size={16} />
+				<Link href={`/advanced-search`}>
+					<a>高度な検索へ</a>
+				</Link>
 				<Spacer size={40} />
 				<div className={styles.wrapper}>
 					<section className={styles.microCMS}>
