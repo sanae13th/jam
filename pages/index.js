@@ -1,12 +1,11 @@
 import Link from "next/link";
-import { jsonData } from "../src/assets/data";
 import { Container } from "../src/components/Container";
 import { Form } from "../src/components/Form";
+import { FormFuse } from "../src/components/FormFuse";
 import { Spacer } from "../src/components/Spacer";
 import styles from "../styles/home.module.scss";
 
 export default function Home() {
-	console.log(jsonData);
 	return (
 		<main>
 			<Container>
@@ -46,12 +45,10 @@ export default function Home() {
 					<Spacer size={8} />
 					<section className={styles.fusejs}>
 						<h3>fusejs検索</h3>
-						<section>
-							<h4>本の検索</h4>
+						<div>
 							<Spacer size={16} />
-							<Form category="book" type="q" />
-							<Form category="book" type="contains" />
-						</section>
+							<FormFuse category="fuse" type="マルチ" />
+						</div>
 					</section>
 				</div>
 			</Container>
