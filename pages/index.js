@@ -18,15 +18,17 @@ export default function Home() {
 				<Link href={`/news`}>
 					<a>ニュース一覧へ</a>
 				</Link>
+				<Spacer size={16} />
+				<Link href={`/advanced-search`}>
+					<a>検索 + アルファへ</a>
+				</Link>
 				<Spacer size={40} />
 				<div className={styles.wrapper}>
 					<section className={styles.microCMS}>
 						<h3>microCMS検索</h3>
-						<section>
-							<h4>複合</h4>
-							<Spacer size={16} />
+						<div>
 							<Form category="" type="マルチ" />
-						</section>
+						</div>
 						<Spacer size={24} />
 						<section>
 							<h4>本の検索</h4>
