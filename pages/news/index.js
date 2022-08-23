@@ -5,7 +5,6 @@ import { client } from "../../src/lib/client";
 import styles from "../../styles/list.module.scss";
 
 export default function Home({ news }) {
-	console.log(news);
 	return (
 		<Container>
 			<h2>ニュース一覧</h2>
@@ -25,7 +24,7 @@ export default function Home({ news }) {
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async () => {
-	const data = await client.get({ endpoint: "news" });
+	const data = await client.get({ endpoint: "news", queries: { limit: 100 } });
 
 	return {
 		props: {
