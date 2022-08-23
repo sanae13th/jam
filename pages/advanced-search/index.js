@@ -91,11 +91,11 @@ export default function Home() {
 						onChange={onChangeKeyword}
 					/>
 					<div>
-						<label htmlFor="news">news</label>
-						<input type="checkbox" id="news" onChange={onChangeNews} />
-						<Spacer size={8} />
 						<label htmlFor="book">book</label>
 						<input type="checkbox" id="book" onChange={onChangeBook} />
+						<Spacer size={8} />
+						<label htmlFor="news">news</label>
+						<input type="checkbox" id="news" onChange={onChangeNews} />
 					</div>
 					<label htmlFor="match">一致度(高いほど完全一致に近づく)</label>
 					<input
