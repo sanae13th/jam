@@ -12,7 +12,7 @@ export default function Home({ news, searchQuery }) {
 			<div>
 				検索ワード: <span className={styles.word}>{searchQuery}</span>
 			</div>
-			<div>検索結果は{books.length}件です</div>
+			<div>検索結果は{news.length}件です</div>
 			<Spacer size={16} />
 			<ul className={styles.wrapper}>
 				{news.map((news) => (
