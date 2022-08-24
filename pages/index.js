@@ -48,7 +48,6 @@ export default function Home() {
 					<section className={styles.fusejs}>
 						<h3>fusejs検索</h3>
 						<div>
-							<Spacer size={16} />
 							<FormFuse category="fuse" type="マルチ" />
 						</div>
 					</section>
