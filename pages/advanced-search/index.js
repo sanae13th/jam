@@ -10,8 +10,8 @@ export default function Home() {
 	const [isNews, setIsNews] = useState(false);
 	const [isBook, setIsBook] = useState(false);
 	const [keyword, setKeyword] = useState("");
-	const [match, setMatch] = useState(1);
-	const [result, setResult] = useState(0);
+	const [match, setMatch] = useState(0.5);
+	const [result, setResult] = useState({});
 	const bookTitle = "book.title";
 	const newsTitle = "news.title";
 	const options = {
@@ -105,7 +105,7 @@ export default function Home() {
 						max="1"
 						step="0.01"
 						onChange={onChangeMatch}
-						defaultValue={0}
+						defaultValue={0.5}
 					/>
 				</div>
 			</form>
