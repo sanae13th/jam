@@ -20,5 +20,8 @@
 		"dotenv": "^16.0.1",
 		"eslint": "8.21.0",
 		"eslint-config-next": "12.2.4"
+	},
+	"volta": {
+		"node": "16.15.1"
 	}
 }
