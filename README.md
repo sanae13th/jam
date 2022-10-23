@@ -1,6 +1,7 @@
 ## 概要
 
-勉強会のための repo。詳細は ↓　　
+勉強会のための repo。  
+
 https://gist.github.com/hashibadaiki/5eeb578acdc83fd815a49923228e42ee
 
 ## 環境構築
