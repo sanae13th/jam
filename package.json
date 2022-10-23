@@ -4,13 +4,11 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
-		"build": "next build && yarn json:prod",
+		"build": "next build",
 		"start": "next start",
-		"lint": "next lint",
-		"json:prod": "node ./scripts/create-json.mjs"
+		"lint": "next lint"
 	},
 	"dependencies": {
-		"fuse.js": "^6.6.2",
 		"microcms-js-sdk": "^2.2.1",
 		"next": "12.2.4",
 		"nprogress": "^0.2.0",
@@ -21,7 +19,6 @@
 	"devDependencies": {
 		"dotenv": "^16.0.1",
 		"eslint": "8.21.0",
-		"eslint-config-next": "12.2.4",
-		"json-loader": "^0.5.7"
+		"eslint-config-next": "12.2.4"
 	}
 }
