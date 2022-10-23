@@ -4,9 +4,11 @@
 
 https://gist.github.com/hashibadaiki/5eeb578acdc83fd815a49923228e42ee
 
-## 環境構築
+### 環境構築
 
-### 開発環境
+`yarn install` or `npm i`
+
+### 開発サーバー起動
 
 `yarn dev` or `npm run dev`
 
